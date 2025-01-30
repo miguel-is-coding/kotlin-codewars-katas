@@ -1,7 +1,5 @@
 package org.example.parityOutlier
 
-private const val minLength = 3
-
 class ParityMatcher() {
     companion object {
         fun findOutlierIn(listOfNumbers: Array<Int>): Int =
@@ -10,7 +8,9 @@ class ParityMatcher() {
             else
                 listOfNumbers.first { it % 2 == 0 }
 
-        private fun isAnEvenList(listOfNumbers: Array<Int>): Boolean =
-            listOfNumbers.take(minLength).count { it % 2 == 0 } > 1
+        private fun isAnEvenList(listOfNumbers: Array<Int>): Boolean {
+            val minLength = 3
+            return listOfNumbers.take(minLength).count { it % 2 == 0 } > 1
+        }
     }
 }
