@@ -1,7 +1,11 @@
 package org.example.meeting
 
-class Meeting(members: String) {
+class Meeting(private val members: String) {
     fun orderMembers(): String {
-        return "()"
+        if (members.isEmpty()) {
+            return "()"
+        }
+        val memberFullName = members.split(":")
+        return "(${memberFullName[1].uppercase()}, ${memberFullName[0].uppercase()})"
     }
 }
