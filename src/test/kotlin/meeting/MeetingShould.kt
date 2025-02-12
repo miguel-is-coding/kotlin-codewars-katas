@@ -19,4 +19,9 @@ class MeetingShould: FunSpec({
         val meeting = Meeting("")
         meeting.orderMembers() shouldBe "()"
     }
+
+    test("retrieve the lastname and firstname in uppercase separated by comma between parenthesis") {
+        val meeting = Meeting("Fred:Corwill")
+        meeting.orderMembers() shouldBe "(CORWILL, FRED)"
+    }
 })
