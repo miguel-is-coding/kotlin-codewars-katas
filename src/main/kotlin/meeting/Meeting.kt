@@ -11,13 +11,10 @@ class Meeting(private val members: String) {
                 val firstNameInitial = it.first()
                 firstNameInitial
             })
-        var membersOrdered = ""
-        fullNamesOrdered.forEach {
-            val fullName = it.split(":")
-            val lastname = fullName[1].uppercase()
-            val firstname = fullName[0].uppercase()
-            membersOrdered += "($lastname, $firstname)"
+        return fullNamesOrdered.joinToString("") {
+            it.split(":").let { (firstname, lastname) ->
+                "(${lastname.uppercase()}, ${firstname.uppercase()})"
+            }
         }
-        return membersOrdered
     }
 }
