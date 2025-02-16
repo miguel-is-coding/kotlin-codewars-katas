@@ -15,7 +15,7 @@ class Meeting(private val members: String) {
     }
 
     private fun sortByNameAndLastname(members: List<Pair<String, String>>): List<Pair<String, String>> {
-        return members.sortedWith(compareBy({ it.second }, { it.first }))
+        return members.sortedWith(compareBy({ it.second.lowercase() }, { it.first.lowercase() }))
     }
 
     private fun formatFullNameFrom(member: Pair<String, String>): String {
