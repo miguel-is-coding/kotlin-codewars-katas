@@ -34,4 +34,9 @@ class MeetingShould: FunSpec({
         val meeting = Meeting("Barney:Tornbull;Fred:Corwill")
         meeting.orderMembers() shouldBe "(CORWILL, FRED)(TORNBULL, BARNEY)"
     }
+
+    test("order meeting members by firstname when lastname is equal") {
+        val meeting = Meeting("Fred:Corwill;Alfred:Corwill")
+        meeting.orderMembers() shouldBe "(CORWILL, ALFRED)(CORWILL, FRED)"
+    }
 })
