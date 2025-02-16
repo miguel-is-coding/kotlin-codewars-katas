@@ -3,9 +3,14 @@ package org.example.meeting
 class Meeting(private val members: String) {
     fun orderMembers(): String {
         if (members.isEmpty()) return "()"
-        val memberFullName = members.split(":")
-        val lastname = memberFullName[1].uppercase()
-        val firstname = memberFullName[0].uppercase()
-        return "($lastname, $firstname)"
+        val membersList = members.split(";")
+        var membersOrdered = ""
+        membersList.forEach {
+            val memberFullName = it.split(":")
+            val lastname = memberFullName[1].uppercase()
+            val firstname = memberFullName[0].uppercase()
+            membersOrdered += "($lastname, $firstname)"
+        }
+        return membersOrdered
     }
 }
