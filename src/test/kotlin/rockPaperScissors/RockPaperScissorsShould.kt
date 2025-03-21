@@ -22,5 +22,9 @@ class RockPaperScissorsShould: FunSpec({
     test("make rock lose against paper") {
         RockPaperScissors.play(Player(Choices.ROCK), Player(Choices.PAPER)) shouldBe "Player 2 wins"
     }
+
+    test("make scissors beat paper") {
+        RockPaperScissors.play(Player(Choices.SCISSORS), Player(Choices.PAPER)) shouldBe "Player 1 wins"
+    }
 })
 
