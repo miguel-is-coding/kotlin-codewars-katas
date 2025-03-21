@@ -2,11 +2,9 @@ package org.example.rockPaperScissors
 
 object RockPaperScissors {
     fun play(player1: Player, player2: Player): String {
-        return when {
-            player1.choice == player2.choice -> "Draw game"
-            wins(player1, player2) -> "Player 1 wins"
-            else -> "Player 2 wins"
-        }
+        return player1.choice.takeIf { it == player2.choice }?.let { "Draw game" }
+            ?: wins(player1, player2).takeIf { it }?.let { "Player 1 wins" }
+            ?: "Player 2 wins"
     }
 
     private fun wins(
