@@ -13,5 +13,6 @@ data class Player(val choice: Choices)
 
 enum class Choices {
     ROCK,
-    SCISSORS
+    SCISSORS,
+    PAPER
 }
