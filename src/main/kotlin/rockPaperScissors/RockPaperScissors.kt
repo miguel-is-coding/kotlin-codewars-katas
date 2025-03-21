@@ -2,6 +2,9 @@ package org.example.rockPaperScissors
 
 object RockPaperScissors {
     fun play(player1: Player, player2: Player): String {
+        if (player1.choice == player2.choice) {
+            return "Draw game"
+        }
         return if (wins(player1, player2)
         ) {
             "Player 1 wins"
