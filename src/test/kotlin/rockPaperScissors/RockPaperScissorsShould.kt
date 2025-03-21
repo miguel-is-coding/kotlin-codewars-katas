@@ -30,5 +30,9 @@ class RockPaperScissorsShould: FunSpec({
     test("make paper lose against scissors") {
         RockPaperScissors.play(Player(Choices.PAPER), Player(Choices.SCISSORS)) shouldBe "Player 2 wins"
     }
+
+    test("draw when both choices are the same") {
+        RockPaperScissors.play(Player(Choices.PAPER), Player(Choices.PAPER)) shouldBe "Draw game"
+    }
 })
 
