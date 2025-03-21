@@ -15,6 +15,9 @@ class RockPaperScissorsShould: FunSpec({
 
 object RockPaperScissors{
     fun play(player1Choice: String, player2Choice: String): String {
-        return "Player 1 wins"
+        if (player1Choice == "rock") {
+            return "Player 1 wins"
+        }
+        return "Player 2 wins"
     }
 }
